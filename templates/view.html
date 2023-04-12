@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="module" src="{{ url_for('static', filename = 'record.js') }}"></script>
+    
+    <script>
+        //this is super important -- lets us access all the json items in javascript 
+        var items = {{items|tojson}} 
+    </script>
+
+<div class="row row-list">
+    <div class="col-md-6 title">
+        <h1 id="company_name" class="title row " >
+            <a id="view1" class="text-title" href={{data.link}}>{{data.company}}</a>
+            
+            
+        </h1>
+        <div class="top-left">
+        <div class="row mid-text">
+            <div class="col-md-4 text-left" >
+                <div>Position: </div>
+                <div id="view2">{{data.position}}</div>
+            </div>
+            <div class="col-md-4 text-left" >
+                <div>Next Due Date: </div>
+                <div id="view3">{{data.deadline}}</div>
+            </div>
+            
+        </div>
+        <div class="smallspace">
+
+
+        </div>
+        <div id="view4">{{data.link}}</div></div>
+        <div class="space">
+
+
+        </div>
+        
+        <div class="bottom-left">
+        <div class="row-list">Requirements / Notes:  </div> 
+        <div class="row-list"id="view5">{{data.requirement}}</div>
+            
+    </div>
+        
+        
+
+
+    </div>
+    <div class="col-md-6">
+        <h2>Progress Bar</h2>
+        <div class="row">
+            {% if stage == "Apply"%}
+            <div class="col-md-3 text-center left-side {{progress}}" id="pro-apply">
+                {{status}}
+            </div>
+            <div class="col-md-3 text-center mid-dle " id="pro-oa">
+                
+            </div>
+            <div class="col-md-3 text-center right-side" id="pro-in">
+                
+            </div>
+            {% elif stage=="OA"%}
+            <div class="col-md-3 text-center left-side pro-1" id="pro-apply">
+                
+            </div>
+            <div class="col-md-3 text-center mid-dle {{progress}}" id="pro-oa">
+                {{status}}
+            </div>
+            <div class="col-md-3 text-center right-side" id="pro-in">
+                
+            </div>
+            
+            {% elif stage=="Interview"%}
+            <div class="col-md-3 text-center left-side pro-1" id="pro-apply">
+                
+            </div>
+            <div class="col-md-3 text-center mid-dle pro-1" id="pro-oa">
+                
+            </div>
+            <div class="col-md-3 text-center right-side {{progress}}" id="pro-in">
+                {{status}}
+            </div>
+            {%endif%}
+        </div>
+        <div class="row mid-text">
+            <div class="col-md-3 text-center">
+                Apply
+            </div>
+            <div class="col-md-3 text-center">
+                OA
+            </div>
+            <div class="col-md-3 text-center">
+                Interview
+            </div>
+        </div>
+        <div class="space"> </div>
+        <h2>Decision</h2>
+        <div class="row mid-text">
+            {% if decision == "App-In-Progress"%}
+            <div class="col-md-6 text-center decision pro-0">{{decision}}</div>
+            {% elif decision=="Accepted"%}
+            <div class="col-md-6 text-center decision pro-1">{{decision}}</div>
+            {% else %}
+            <div class="col-md-6 text-center decision pro-2">{{decision}}</div>
+            {%endif%}
+        </div>
+       
+        <div class="space"></div>
+        
+        Edit
+        <div class="fa fa-pencil text-right" id="edit_progress"></div>
+
+       <div>
+        <div id="drop-down-{{data.id}}"></div>
+       </div>
+
+       <div class="space"></div>
+       
+        <div id="decision-{{data.id}}"></div>
+       </div>
+
+        
+
+        
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+

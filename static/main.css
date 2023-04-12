@@ -1,0 +1,123 @@
+.body{
+    background-color: rgb(248, 248, 229);
+    height: 600px;
+}
+
+.row{
+    padding: 1px;
+    margin-bottom: 1px;
+}
+
+.row-list{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.title{
+    padding:15px;
+    color: black;
+}
+
+.text-title{
+    color:black;
+}
+
+.sort-btn{
+    background-color: rgb(239, 239, 148);
+    border-radius: 20%;
+    font-size: smaller;
+    border: white;
+}
+
+.show{
+    visibility: visible;
+}
+.hide{
+    visibility: hidden;
+}
+
+.mid-text{
+    font-size: 20px;
+}
+
+.req-text{
+    font-size:18px;
+}
+
+.decision{
+    border-radius: 25px;
+}
+
+.left-side{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: 1px solid lightgrey;
+}
+
+.mid-dle{
+    
+    border: 1px solid lightgrey;
+}
+
+.right-side{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 1px solid lightgrey;
+}
+
+.pro-0{
+    background-color:yellow;
+}
+
+.pro-1{
+    background-color:rgb(91, 191, 91);
+}
+
+.pro-2{
+    background-color: red;
+}
+
+.space{
+    height: 50px;
+}
+.smallspace{
+    height: 30px;
+}
+.top-left{
+    background-color: rgb(245, 245, 166);
+    padding:10px;
+    margin-right: 50px;
+    border-radius: 20px;
+}
+.bottom-left{
+    background-color: rgb(245, 245, 166);
+    padding:10px;
+    margin-right: 50px;
+    border-radius: 20px;
+}
+
+
+
+.red-button{
+    height:25px;
+    width: 50px;;
+    background-color: orange;
+    border: solid white 1px;
+    text-align: center;
+    border-left-width: 10px;
+    
+}
+
+.edit{
+    text-align: center;
+    border-left-width: 20px;
+}
+
+
+.header{
+    font-size: 40px;
+    font-weight: 20px;
+    background-color: lightgray;
+    padding: 40px;
+    margin-bottom:30px;
+}

@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <script type="module" src="{{ url_for('static', filename = 'record.js') }}"></script>
+    
+    <script>
+        //this is super important -- lets us access all the json items in javascript 
+        var items = {{items|tojson}} 
+    </script>
+
+
+
+    <body>
+        <div id="entry" class="container">
+
+            <div class="title">
+                <h6>I am applying to {{count}} jobs!</h6>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-2">
+                    <div class="ui-widget">
+                        <input id="company"type="text" placeholder="Company">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="ui-widget">
+                        <input id="position"type="text" placeholder="Position">
+                    </div>
+                </div>
+                
+                <div class="col-md-2">
+                    <div class="ui-widget">
+                        <input id="deadline"type="text" placeholder="Deadline">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="ui-widget">
+                        <input id="link"type="text" placeholder="Url">
+                    </div>
+                </div>
+                
+                <div class="col-md-2 text-left">
+                    <a href="/"><button class="btn btn-primary" id="submit" >Log</button></a>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-2 text-center " >
+                    <button id="comp_sort" class="sort-btn">Sort ^</button>
+                </div>
+                <div class="col-md-2 text-center" >
+                    <button id="pos_sort" class="sort-btn">Sort ^</button>
+                </div>
+                
+                <div class="col-md-2 text-center" >
+                    <button id="date_sort" class="sort-btn">Sort ^</button>
+                </div>
+                <div class="col-md-2">
+                </div>
+                
+                <div class="col-md-2 text-left">
+                </div>
+
+            </div>
+            
+
+        </div>
+
+        <div id = "jobboard" class = "text-center">
+            this is job board
+        </div>
+
+        
+    </body>
+
+
+
+{% endblock %}
+
